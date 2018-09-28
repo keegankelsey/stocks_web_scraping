@@ -26,7 +26,7 @@ Of course, this data can always be written into a file for later consumption and
 $ python scrape_stocks_eod_data.py NASDAQ > nasdaq_eod.json
 ```
 
-Note: The `nasdaq_eod.json` file is not a true JSON object in itself, it is a file that contains one JSON object per line. I prefer this type of file, as opposed to creating one large JSON object within the file. This type of file may easily parsed using a command-line (unix/linux) program such as, `jq`:
+Note: The `nasdaq_eod.json` file is not a true JSON object in itself, it is a file that contains one JSON object per line. I prefer this type of file, as opposed to creating one large JSON object within the file. Parsing this type of file is easy using a command-line (unix/linux) program such as, `jq`:
 ```
 head nasdaq_eod.json | jq -c '[.Code, .High, .Low, .date]'
 ```
