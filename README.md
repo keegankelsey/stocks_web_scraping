@@ -6,7 +6,7 @@ Purpose: Demonstrate how to scrape websites using Python and BeautifulSoup
 
 ## src/scrape_stocks_eod_data.py
 
-[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is a fantastic library for parsing HTML in a sensible way. Here, I use Python, requests, Beautiful Soup, and [www.eoddate.com](http://www.eoddate.com/) to grab end-of-day (EOD) summary data on stocks symbols from the NASDAQ exchange. 
+[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is a fantastic library for parsing HTML in a sensible way. Here, I use Python, requests, Beautiful Soup, and [www.eoddate.com](http://eoddata.com/) to grab end-of-day (EOD) summary data on stocks symbols from the NASDAQ exchange. 
 
 ***Example:*** Scrape web pages and extract NASDAQ exchange data (high, low, close, etc.) on all available stock symbols.
 ```
