@@ -13,7 +13,7 @@ Purpose: Demonstrate how to scrape websites using Python and BeautifulSoup
 $ python scrape_stocks_eod_data.py NASDAQ
 ```
 
-The parser will iterate thru and grab all available stock data, starting with the letter, "A." A JSON object, one object per stock, will print to the terminal. For example, the first four objects from a particular day are listed here:
+The parser will iterate thru and grab all available stock data, starting with the letter, "A." A JSON object, one object per stock, will print to the terminal. For example, the first four objects the above code are listed here:
 ```
 {"Code": "AABA", "Name": "Altaba Inc", "High": "68.46", "Low": "67.46", "Close": "67.96", "Volume": "2,269,599", "exchange": "NASDAQ", "date": "09/28/18 14:25"}
 {"Code": "AAL", "Name": "American Airlines Gp", "High": "41.96", "Low": "40.70", "Close": "40.79", "Volume": "2,419,090", "exchange": "NASDAQ", "date": "09/28/18 14:25"}
@@ -21,7 +21,7 @@ The parser will iterate thru and grab all available stock data, starting with th
 {"Code": "AAOI", "Name": "Applied Optoelect", "High": "25.78", "Low": "23.80", "Close": "24.52", "Volume": "4,601,528", "exchange": "NASDAQ", "date": "09/28/18 14:25"}
 ```
 
-Of course, this data can always be writting into a file for later consumption and/or further processing. For instance, I would clean up and convert the key, "Volume," such that a number is stored as a value instead of a string. Similar to the "High" and "Low" keys. To pipe data into a file:
+Of course, this data can always be written into a file for later consumption and/or further processing. For instance, I would clean up and convert the key, "Volume," such that a number is stored as a value instead of a string. Similar to the "High" and "Low" keys. To pipe data into a file:
 ```
 $ python scrape_stocks_eod_data.py NASDAQ > nasdaq_eod.json
 ```
