@@ -21,16 +21,16 @@ The parser will iterate thru and grab all available stock data, starting with th
 {"Code": "AAOI", "Name": "Applied Optoelect", "High": "25.78", "Low": "23.80", "Close": "24.52", "Volume": "4,601,528", "exchange": "NASDAQ", "date": "09/28/18 14:25"}
 ```
 
-Of course, this data can always be written into a file for later consumption and/or further processing. For instance, I would clean up and convert the key, "Volume," such that a number is stored as a value instead of a string. Similar to the "High" and "Low" keys. To pipe data into a file:
+Of course, this data can always be written into a file for later consumption and/or further processing. For instance, I would clean up and convert the key, "Volume," such that a number is stored as a value instead of a string. Likewise, I would to the same to the "High" and "Low" keys. To pipe data into a file:
 ```
 $ python scrape_stocks_eod_data.py NASDAQ > nasdaq_eod.json
 ```
 
-Note: The `nasdaq_eod.json` file is not a true JSON object in itself, it is a file that contains one JSON object per line. I prefer this type of file, as opposed to creating a single JSON object. This type of file may easily parsed using `jq`:
+Note: The `nasdaq_eod.json` file is not a true JSON object in itself, it is a file that contains one JSON object per line. I prefer this type of file, as opposed to creating one large JSON object within the file. This type of file may easily parsed using a command-line (unix/linux) program such as, `jq`:
 ```
 head nasdaq_eod.json | jq -c '[.Code, .High, .Low, .date]'
 ```
-This returns:
+This above code returns:
 ```
 ["AABA","68.46","67.46","09/28/18 14:30"]
 ["AAL","41.96","40.70","09/28/18 14:30"]
